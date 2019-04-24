@@ -11,24 +11,24 @@ export default {
   name: 'Ping',
   data() {
     return {
-        msg: '',
+      msg: '',
     };
-},
-methods: {
+  },
+  methods: {
     getMessage() {
-        const path = 'http://localhost:5000/ping';
-        axios.get(path)
+      const path = 'http://localhost:5000/ping';
+      axios.get(path)
         .then((res) => {
-            this.msg = res.data;
+          this.msg = res.data;
         })
         .catch((error) => {
-            // eslint-выключение следующей строки
-            console.error(error);
+          // eslint-выключение следующей строки
+          console.error(error);
         });
     },
-},
-    created() {
-      this.getMessage();
-    },
+  },
+  created() {
+    this.getMessage();
+  },
 };
 </script>
